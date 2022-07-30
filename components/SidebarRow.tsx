@@ -9,7 +9,7 @@ function SidebarRow({ Icon, title }: Props) {
 	return (
 		<>
 			{/* <img src={Icon} */}
-			<Icon />
+			<Icon color="#A5C4F3" />
 
 			<p>{title}</p>
 		</>
