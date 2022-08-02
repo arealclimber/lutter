@@ -16,7 +16,7 @@ import Link from 'next/link';
 function Sidebar() {
 	return (
 		<div className="flex flex-col items-center px-4 col-span-2 md:items-start">
-			<Link href="https://arealclimber.me/">
+			<Link href="/">
 				<BsTwitter
 					className="h-6 w-6 cursor-pointer m-3 text-cuteBlue"
 					size="2rem"
