@@ -11,7 +11,13 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Sidebar />
+			<main>
+				<Sidebar />
+
+				{/* Feed */}
+
+				{/* Widgets */}
+			</main>
 		</>
 	);
 };
