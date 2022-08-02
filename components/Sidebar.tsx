@@ -18,8 +18,7 @@ function Sidebar() {
 		<div className="flex flex-col items-center px-4 col-span-2 md:items-start">
 			<Link href="https://arealclimber.me/">
 				<BsTwitter
-					className="h-6 w-6 cursor-pointer m-3"
-					color="#A5C4F3"
+					className="h-6 w-6 cursor-pointer m-3 text-cuteBlue"
 					size="2rem"
 				/>
 			</Link>

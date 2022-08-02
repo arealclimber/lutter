@@ -5,7 +5,7 @@ module.exports = {
 		extend: {
 			colors: {
 				twitter: '#00ADED',
-				cuteBlue: '#A5C4F3',
+				cuteBlue: '#AC7088',
 			},
 		},
 	},
