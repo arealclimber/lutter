@@ -15,10 +15,10 @@ import Link from 'next/link';
 
 function Sidebar() {
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col items-center px-4 col-span-2 md:items-start">
 			<Link href="https://arealclimber.me/">
 				<BsTwitter
-					className="h-6 w-6 cursor-pointer m-2"
+					className="h-6 w-6 cursor-pointer m-3"
 					color="#A5C4F3"
 					size="2rem"
 				/>

@@ -8,18 +8,18 @@ import Widgets from '../components/Widgets';
 const Home: NextPage = () => {
 	return (
 		<>
-			<Head>
-				<title>Lutter - Twitter Clone</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			<div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
+				<Head>
+					<title>Lutter - Twitter Clone</title>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
 
-			<main>
-				<Sidebar />
-
-				<Feed />
-
-				<Widgets />
-			</main>
+				<main className="grid grid-cols-9">
+					<Sidebar />
+					<Feed />
+					<Widgets />
+				</main>
+			</div>
 		</>
 	);
 };
