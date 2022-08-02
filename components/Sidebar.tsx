@@ -11,12 +11,27 @@ import {
 } from '@heroicons/react/outline';
 import { BsTwitter } from 'react-icons/bs';
 import SidebarRow from './SidebarRow';
+import Link from 'next/link';
 
 function Sidebar() {
 	return (
-		<div>
-			<BsTwitter className="h-10 w-10" color="#A5C4F3" size="2rem" />
+		<div className="flex flex-col">
+			<Link href="https://arealclimber.me/">
+				<BsTwitter
+					className="h-6 w-6 cursor-pointer m-2"
+					color="#A5C4F3"
+					size="2rem"
+				/>
+			</Link>
 			<SidebarRow Icon={HomeIcon} title="Home" />
+			<SidebarRow Icon={HashtagIcon} title="Explore" />
+			<SidebarRow Icon={BellIcon} title="Notifications" />
+			<SidebarRow Icon={MailIcon} title="Messages" />
+			<SidebarRow Icon={BookmarkIcon} title="Bookmarks" />
+			<SidebarRow Icon={CollectionIcon} title="Lists" />
+			<SidebarRow Icon={UserIcon} title="Sign in" />
+
+			<SidebarRow Icon={DotsCircleHorizontalIcon} title="More" />
 		</div>
 	);
 }
