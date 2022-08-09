@@ -16,7 +16,7 @@ const Home = ({ tweets }: Props) => {
 	console.log(tweets);
 	return (
 		<>
-			<div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
+			<div className="lg:max-w-6xl mx-auto">
 				<Head>
 					<title>Lutter - Twitter Clone</title>
 					<link rel="icon" href="/favicon.ico" />
