@@ -2,17 +2,35 @@ import { RefreshIcon } from '@heroicons/react/outline';
 import { Tweet } from '../typings';
 import TweetComponent from '../components/Tweet';
 import TweetBox from './TweetBox';
+import { useState } from 'react';
+import { fetchTweets } from '../utils/fetchTweets';
+import toast, { Toaster } from 'react-hot-toast';
 
 interface Props {
 	tweets: Tweet[];
 }
 
-const Feed = ({ tweets }: Props) => {
+const Feed = ({ tweets: tweetsProps }: Props) => {
+	const [tweets, setTweets] = useState<Tweet[]>(tweetsProps);
+	console.log(tweets);
+
+	const handleRefresh = async () => {
+		const refreshToast = toast.loading('Refreshing...');
+
+		const tweets = await fetchTweets();
+		setTweets(tweets);
+
+		toast.success('Feed Updated!', {
+			id: refreshToast,
+		});
+	};
+
 	return (
 		<div className="col-span-7 lg:col-span-5 border-x">
 			<div className="flex items-center justify-between">
 				<h1 className="p-5 pb-0 text-xl font-bold">Home</h1>
 				<RefreshIcon
+					onClick={handleRefresh}
 					className="mr-5 mt-5 h-8 w-6 cursor-pointer 
                 text-cuteBlue transition-all duration-500 ease-out 
                 hover:rotate-180 active:scale-125"
