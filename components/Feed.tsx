@@ -1,10 +1,11 @@
 import { RefreshIcon } from '@heroicons/react/outline';
-import { Tweet } from '../typings';
+import { Comment, Tweet } from '../typings';
 import TweetComponent from '../components/Tweet';
 import TweetBox from './TweetBox';
 import { useState } from 'react';
 import { fetchTweets } from '../utils/fetchTweets';
 import toast, { Toaster } from 'react-hot-toast';
+import { fetchComments } from '../utils/fetchComments';
 
 interface Props {
 	tweets: Tweet[];
@@ -12,6 +13,9 @@ interface Props {
 
 const Feed = ({ tweets: tweetsProps }: Props) => {
 	const [tweets, setTweets] = useState<Tweet[]>(tweetsProps);
+	// TODO: Fetch all comments: 0.getAllComments 1.fetchAllComments 2.import fetchAllComments here
+	const [comments, setComments] = useState<Comment[]>([]);
+
 	console.log(tweets);
 
 	const handleRefresh = async () => {
