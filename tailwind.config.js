@@ -6,6 +6,7 @@ module.exports = {
 			colors: {
 				twitter: '#00ADED',
 				cuteBlue: '#AC7088',
+				hoverBlue: '#8c586d',
 			},
 		},
 	},

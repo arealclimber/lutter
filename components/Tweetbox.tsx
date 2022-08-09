@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 
-const Tweetbox = () => {
+const TweetBox = () => {
 	const [input, setInput] = useState('');
 
 	return (
@@ -52,4 +52,4 @@ const Tweetbox = () => {
 	);
 };
 
-export default Tweetbox;
+export default TweetBox;

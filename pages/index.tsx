@@ -12,6 +12,7 @@ interface Props {
 }
 
 const Home = ({ tweets }: Props) => {
+	console.log('Home rendering: ');
 	console.log(tweets);
 	return (
 		<>
@@ -23,7 +24,7 @@ const Home = ({ tweets }: Props) => {
 
 				<main className="grid grid-cols-9">
 					<Sidebar />
-					<Feed />
+					<Feed tweets={tweets} />
 
 					<Widgets />
 				</main>
@@ -35,7 +36,9 @@ const Home = ({ tweets }: Props) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+	// console.log('getServerSideProps');
 	const tweets = await fetchTweets();
+	// console.log(tweets);
 	return {
 		props: {
 			tweets,
