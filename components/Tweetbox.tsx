@@ -6,16 +6,21 @@ import {
 	SearchCircleIcon,
 } from '@heroicons/react/outline';
 import React, { useState } from 'react';
+import { useSession } from 'next-auth/react';
 
 const TweetBox = () => {
-	const [input, setInput] = useState('');
+	const [input, setInput] = useState<string>('');
+	const { data: session } = useSession();
 
 	return (
 		<div className="flex space-x-2 p-5">
 			<img
 				className="mt-4 h-14 w-14 rounded-full object-cover"
-				src="https://lh3.googleusercontent.com/pw/AL9nZEUNSOFnVQxKfaxsdQXSZnj1avWcBf8MQBivy_wgbegHBbxAkhvvOET4EzipmVyZVOcHKl6An8LlCC5XlU0YnUo23oAoSyQDPyCNa1uzhxR3Auqrio9c-0vPhOlxOwMcUGayqcZyRadgb9e0DZYUXEmjuQ=s204-no?authuser=0"
-				alt="unknown avatar"
+				src={
+					session?.user?.image ||
+					'https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg'
+				}
+				alt="user"
 			/>
 
 			<div className="flex flex-1 items-center pl-2">
@@ -40,7 +45,7 @@ const TweetBox = () => {
 
 						{/* Tweet btn */}
 						<button
-							disabled={!input}
+							disabled={!input || !session}
 							className="bg-cuteBlue text-white px-5 py-2 font-bold rounded-full disabled:opacity-40"
 						>
 							Tweet

@@ -12,8 +12,11 @@ import {
 import { BsTwitter } from 'react-icons/bs';
 import SidebarRow from './SidebarRow';
 import Link from 'next/link';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 function Sidebar() {
+	const { data: session } = useSession();
+
 	return (
 		<div className="flex flex-col items-center px-4 col-span-2 md:items-start">
 			<Link href="/">
@@ -28,7 +31,11 @@ function Sidebar() {
 			<SidebarRow Icon={MailIcon} title="Messages" />
 			<SidebarRow Icon={BookmarkIcon} title="Bookmarks" />
 			<SidebarRow Icon={CollectionIcon} title="Lists" />
-			<SidebarRow Icon={UserIcon} title="Sign in" />
+			<SidebarRow
+				onClick={session ? signOut : signIn}
+				Icon={UserIcon}
+				title={session ? 'Sign Out' : 'Sign In'}
+			/>
 
 			<SidebarRow Icon={DotsCircleHorizontalIcon} title="More" />
 		</div>
