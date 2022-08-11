@@ -1,6 +1,6 @@
 import { SearchIcon } from '@heroicons/react/outline';
 import React from 'react';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import { TwitterShareButton, TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const Widgets = () => {
 	return (
@@ -13,6 +13,14 @@ const Widgets = () => {
 					placeholder="Search Lutter"
 				/>
 			</div>
+
+			{/* <TwitterShareButton
+				url={'https://arealclimber.me/'}
+				options={{
+					text: '#nextjs is awesome',
+					via: 'arealclimber',
+				}}
+			/> */}
 
 			<TwitterTimelineEmbed
 				sourceType="profile"

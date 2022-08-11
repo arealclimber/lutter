@@ -30,7 +30,7 @@ const Feed = ({ tweets: tweetsProps }: Props) => {
 	};
 
 	return (
-		<div className="col-span-7 lg:col-span-5 border-x max-h-screen overflow-scroll">
+		<div className="col-span-7 lg:col-span-5 border-x max-h-screen overflow-scroll scrollbar-hide">
 			<div className="flex items-center justify-between">
 				<h1 className="p-5 pb-0 text-xl font-bold">Home</h1>
 				<RefreshIcon
