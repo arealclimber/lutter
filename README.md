@@ -1,6 +1,8 @@
 # Tech Stacks
 
 -   next-sanity
+-   next-auth
+-   react-hot-toast
 
 # Next.js + Tailwind CSS Example
 

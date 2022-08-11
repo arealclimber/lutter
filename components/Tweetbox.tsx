@@ -5,10 +5,17 @@ import {
 	PhotographIcon,
 	SearchCircleIcon,
 } from '@heroicons/react/outline';
-import React, { useRef, useState } from 'react';
+import React, { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { Tweet, TweetBody } from '../typings';
+import { fetchTweets } from '../utils/fetchTweets';
+import toast from 'react-hot-toast';
 
-const TweetBox = () => {
+interface Props {
+	setTweets: Dispatch<SetStateAction<Tweet[]>>;
+}
+
+const TweetBox = ({ setTweets }: Props) => {
 	const [input, setInput] = useState<string>('');
 	const [image, setImage] = useState<string>('');
 	const { data: session } = useSession();
@@ -23,6 +30,60 @@ const TweetBox = () => {
 
 		setImage(imageInputRef.current.value);
 		imageInputRef.current.value = '';
+		setImageUrlBoxIsOpen(false);
+	};
+
+	const postTweet = async () => {
+		// const waitTweet = toast.loading('Pending...');
+
+		const tweetInfo: TweetBody = {
+			text: input,
+			username: session?.user?.name || 'Unknown User',
+			profileImg:
+				session?.user?.image ||
+				'https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg',
+			image: image,
+		};
+
+		const result = await fetch(`/api/addTweet`, {
+			body: JSON.stringify(tweetInfo),
+			method: 'POST',
+		});
+
+		const json = await result.json();
+
+		const newTweets = await fetchTweets();
+		setTweets(newTweets);
+
+		// toast.success('Tweet Posted', {
+		// 	id: waitTweet,
+		// 	icon: '🍕',
+		// });
+
+		return json;
+	};
+
+	const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.preventDefault();
+
+		const postPromise = postTweet();
+		toast.promise(
+			postPromise,
+			{
+				loading: 'Loading...',
+				success: 'Tweet Posted!',
+				error: 'something wrong...',
+			},
+			{
+				success: {
+					duration: 5000,
+					icon: '🚀',
+				},
+			}
+		);
+
+		setImage('');
+		setInput('');
 		setImageUrlBoxIsOpen(false);
 	};
 
@@ -64,6 +125,7 @@ const TweetBox = () => {
 
 						{/* Tweet btn */}
 						<button
+							onClick={handleSubmit}
 							disabled={!input || !session}
 							className="bg-cuteBlue text-white px-5 py-2 font-bold rounded-full disabled:opacity-40"
 						>
