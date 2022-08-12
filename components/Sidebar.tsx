@@ -13,6 +13,7 @@ import { BsTwitter } from 'react-icons/bs';
 import SidebarRow from './SidebarRow';
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import toast from 'react-hot-toast';
 
 function Sidebar() {
 	const { data: session } = useSession();
@@ -26,18 +27,43 @@ function Sidebar() {
 				/>
 			</Link>
 			<SidebarRow Icon={HomeIcon} title="Home" />
-			<SidebarRow Icon={HashtagIcon} title="Explore" />
-			<SidebarRow Icon={BellIcon} title="Notifications" />
-			<SidebarRow Icon={MailIcon} title="Messages" />
-			<SidebarRow Icon={BookmarkIcon} title="Bookmarks" />
-			<SidebarRow Icon={CollectionIcon} title="Lists" />
+			{/* TODO: Building area boolean, making it hovering gray */}
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={HashtagIcon}
+				title="Explore"
+			/>
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={BellIcon}
+				title="Notifications"
+			/>
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={MailIcon}
+				title="Messages"
+			/>
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={BookmarkIcon}
+				title="Bookmarks"
+			/>
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={CollectionIcon}
+				title="Lists"
+			/>
 			<SidebarRow
 				onClick={session ? signOut : signIn}
 				Icon={UserIcon}
 				title={session ? 'Sign Out' : 'Sign In'}
 			/>
 
-			<SidebarRow Icon={DotsCircleHorizontalIcon} title="More" />
+			<SidebarRow
+				onClick={() => toast('Building...', { icon: '🏗️' })}
+				Icon={DotsCircleHorizontalIcon}
+				title="More"
+			/>
 		</div>
 	);
 }

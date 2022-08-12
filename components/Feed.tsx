@@ -42,6 +42,7 @@ const Feed = ({ tweets: tweetsProps }: Props) => {
 			</div>
 
 			{/* TweetBox */}
+			{/* TODO: Use Context to refactor */}
 			<div>
 				<TweetBox setTweets={setTweets} />
 			</div>

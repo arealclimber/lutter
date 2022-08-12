@@ -14,7 +14,7 @@ function SidebarRow({ Icon, title, onClick }: Props) {
 				className="flex items-center space-x-2 px-4 py-3 rounded-full hover:bg-gray-100 group cursor-pointer transition-all duration-200 "
 			>
 				<Icon className="h-6 w-6" />
-				<p className="hidden md:inline-flex text-base font-light lg:text-xl group-hover:text-cuteBlue">
+				<p className="hidden md:inline-flex text-base font-light lg:text-xl group-hover:text-cuteBlue ">
 					{title}
 				</p>
 			</div>
