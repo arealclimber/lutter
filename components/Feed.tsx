@@ -1,7 +1,8 @@
 import { RefreshIcon } from '@heroicons/react/outline';
 import { Comment, Tweet } from '../typings';
 import TweetComponent from '../components/Tweet';
-import TweetBox from './TweetBox';
+// import TweetBox from './TweetBox';
+import TweetBox from '../components/TweetBox';
 import { useState } from 'react';
 import { fetchTweets } from '../utils/fetchTweets';
 import toast, { Toaster } from 'react-hot-toast';
