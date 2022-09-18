@@ -22,11 +22,13 @@ const Widgets = () => {
 				}}
 			/> */}
 
-			<TwitterTimelineEmbed
-				sourceType="profile"
-				screenName="arealclimber"
-				options={{ height: 1000 }}
-			/>
+			<div className="mt-5">
+				<TwitterTimelineEmbed
+					sourceType="profile"
+					screenName="arealclimber"
+					options={{ height: 1000 }}
+				/>
+			</div>
 		</div>
 	);
 };
