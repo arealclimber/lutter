@@ -1,33 +1,29 @@
+# Introduction
+
+It's a Twitter clone project.
+
+### Features:
+
+- [x] Tweet with image URL
+- [x] Comment as a thread
+- [x] Ban malicious users
+- [x] Sign in with Twitter
+- [x] Responsive Website Design
+- [ ] Dark mode toggle
+- [ ] Web3 login
+- [ ] Make tweet on-chain NFT
+
+### Project preview
+
+![project preview](https://lh3.googleusercontent.com/fxXzfZMXR6VwtR7EGqa1F4XcKLQXgWmKD-Im3UQ1xkcSK6tmkEU3am-Woy4zWw7sIzTygl3rNl7v0KbQDChcKv0il91LQYvXfgSFwKtdJuoRnyt-2FcmMVWD9y29IiAwfW4AsEgEKEPg5R6i9KcZqH9UDHsj3utnWkJcznfRCh3mApuU3e5OFp3294q7umV6IwJhQtzXxaGjd44AWQaWqTCCfIbs-GJdMdOx-gfZMOLC_E9wbywgBAI5LHCsI31U_Yx0-LjdPpq9BxFzW4Mdirobv8AJSoKdhbyGfjoBE8HRVVqnpPQoGEuFIsBPl3uYmkzsoMIOa4pRLSFbaNGi7jMmLDrsZhPzGyjdXS-lzdjSMQm9KnnA8Vt1HV2aQniNWqrY8x7eXKnaDBJh3e2MyKdLcDS6L76vMh9bsjtYH1kGsbm0-StcPeoRG2U8hhm9iLKnhV6Brnqcv_X38opKqOxmlrGyXkfmQIu3mbYTuEe_CV0_ItdKDD21DV5e_mxWWryEFioAcXe-neesh1RtK2t1cYYUbrvWTOKYdSSRu-iW_lGqLJfpf1vhsydALs418rEv_JZX2_TVdkAX60iNKExP-DGtBHtnea7qt-NSC-wYASKkrTUqVrqfHeKRRWAr9k15menJMLrr8n1Eh_H3Pt3sW3Tho3Aapx9CUx1jdN1tjkglyXm7MwPlwezs2UOrfmCGhrSiKwWHXRf8CHXXF55a-J38bpP74mm_qxlkJ53z6SGNghn8qlluimsA=w1148-h1013-no?authuser=0)
+
 # Tech Stacks
 
--   next-sanity
--   next-auth
--   react-hot-toast
-
-# Next.js + Tailwind CSS Example
-
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- Typescript
+- Next.js
+  - next-sanity
+  - next-auth
+  - react-hot-toast
+- Tailwind CSS
+- CMS (Sanity)
+- Twitter API
