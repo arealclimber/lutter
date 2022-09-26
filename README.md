@@ -17,7 +17,7 @@ It's a Twitter clone project.
 
 ![project preview](./project_preview.PNG)
 
-# Tech Stacks
+# Tech Stack
 
 - Typescript
 - Next.js
